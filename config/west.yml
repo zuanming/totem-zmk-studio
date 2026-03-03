@@ -1,14 +1,36 @@
-manifest:
-  defaults:
-    revision: v0.3
+  manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    # Additional modules containing boards/shields/custom code can be listed here as well
-    # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
+    - name: zuanming
+      url-base: https://github.com/zuanming
+    - name: englmaxi
+      url-base: https://github.com/englmaxi
+    - name: mctechnology17
+      url-base: https://github.com/mctechnology17
+      
   projects:
     - name: zmk
       remote: zmkfirmware
+      revision: v0.3
       import: app/west.yml
+    - name: nice-view-battery                
+      remote: zuanming                       
+      revision: main   
+    - name: zmk-oled-adapter
+      remote: zuanming
+      revision: main
+    - name: zmk-nice-oled
+      remote: mctechnology17
+      revision: main
+    # - name: zmk-dongle
+    #   remote: zuanming
+    #   revision: main
+    - name: zmk-dongle-display
+      remote: englmaxi
+      revision: v0.3
+    - name: zmk-config
+      remote: zuanming
+      revision: main
   self:
     path: config
